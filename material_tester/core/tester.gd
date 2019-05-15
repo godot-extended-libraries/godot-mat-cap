@@ -62,7 +62,7 @@ func _process(delta):
 	m.origin=p
 	
 	get_node("camera").transform=m
-	get_node("ui/label").text = get_node("testers").get_child(tester_index).get_name()
+	get_node("ui/VBoxContainer/HBoxContainer/label").text = get_node("testers").get_child(tester_index).get_name()
 			
 	
 
