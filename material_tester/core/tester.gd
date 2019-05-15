@@ -53,15 +53,12 @@ func _unhandled_input(ev):
 func _process(delta):
 	var xform = get_node("testers").get_child(tester_index).get_node("MeshInstance").global_transform
 	var p = xform.origin
-	var r = xform.basis.get_rotation_quat()
 	var from_xform = get_node("camera").transform
 	var from_p = from_xform.origin
-	var from_r = from_xform.basis.get_rotation_quat()
 	
 	p = from_p.linear_interpolate(p,INTERP_SPEED*delta)
-	r = from_r.slerp(r,INTERP_SPEED*delta)
 	
-	var m = Transform(r)
+	var m = Transform()
 	m.origin=p
 	
 	get_node("camera").transform=m
