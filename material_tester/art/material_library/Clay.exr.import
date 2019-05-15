@@ -5,7 +5,7 @@ type="StreamTexture"
 path.s3tc="res://.import/Clay.exr-0701fa173ec5ef709b542d76895408f8.s3tc.stex"
 path.etc2="res://.import/Clay.exr-0701fa173ec5ef709b542d76895408f8.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "bptc", "s3tc", "etc2" ],
 "vram_texture": true
 }
 

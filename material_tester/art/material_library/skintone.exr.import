@@ -5,7 +5,7 @@ type="StreamTexture"
 path.s3tc="res://.import/skintone.exr-6289b423ef922d58df6306666ea87fe4.s3tc.stex"
 path.etc2="res://.import/skintone.exr-6289b423ef922d58df6306666ea87fe4.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "bptc", "s3tc", "etc2" ],
 "vram_texture": true
 }
 

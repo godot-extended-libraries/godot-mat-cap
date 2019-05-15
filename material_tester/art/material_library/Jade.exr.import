@@ -5,7 +5,7 @@ type="StreamTexture"
 path.s3tc="res://.import/Jade.exr-720bab98600c9ab11a44b40faf771033.s3tc.stex"
 path.etc2="res://.import/Jade.exr-720bab98600c9ab11a44b40faf771033.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "bptc", "s3tc", "etc2" ],
 "vram_texture": true
 }
 

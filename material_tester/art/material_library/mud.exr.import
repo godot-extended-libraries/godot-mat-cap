@@ -5,7 +5,7 @@ type="StreamTexture"
 path.s3tc="res://.import/mud.exr-2b476af1100b0013e1e1f41a05b6634d.s3tc.stex"
 path.etc2="res://.import/mud.exr-2b476af1100b0013e1e1f41a05b6634d.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "bptc", "s3tc", "etc2" ],
 "vram_texture": true
 }
 

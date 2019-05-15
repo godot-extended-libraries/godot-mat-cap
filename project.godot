@@ -41,6 +41,7 @@ multithread/thread_rid_pool_prealloc=60
 [rendering]
 
 threads/thread_model=2
+vram_compression/import_bptc=true
 quality/reflections/texture_array_reflections.mobile=true
 quality/reflections/high_quality_ggx.mobile=true
 quality/depth/hdr.mobile=true
