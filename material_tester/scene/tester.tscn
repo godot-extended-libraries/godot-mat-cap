@@ -1,0 +1,511 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://material_tester/art/material_library/amber.exr" type="Texture" id=1]
+[ext_resource path="res://material_tester/art/material_library/mud.exr" type="Texture" id=2]
+[ext_resource path="res://material_tester/art/environment/mat_capture_env.tres" type="Environment" id=3]
+[ext_resource path="res://material_tester/art/material_library/resin.exr" type="Texture" id=4]
+[ext_resource path="res://material_tester/scene/test_bed.scn" type="PackedScene" id=5]
+[ext_resource path="res://material_tester/art/material_library/material_capture.tres" type="Shader" id=6]
+[ext_resource path="res://material_tester/art/material_library/skintone.exr" type="Texture" id=7]
+[ext_resource path="res://material_tester/core/tester.gd" type="Script" id=8]
+[ext_resource path="res://material_tester/art/material_library/Jade.exr" type="Texture" id=9]
+[ext_resource path="res://material_tester/art/material_library/material_capture.shader" type="Shader" id=10]
+[ext_resource path="res://material_tester/art/godot_ball.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://material_tester/art/material_library/Clay.exr" type="Texture" id=12]
+[ext_resource path="res://material_tester/art/material_library/white_lightbulb.exr" type="Texture" id=13]
+[ext_resource path="res://material_tester/art/material_library/toonish.exr" type="Texture" id=14]
+[ext_resource path="res://material_tester/art/material_library/dramatic.exr" type="Texture" id=15]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.895294, 0.900549, 0.890078, 1 )
+metallic = 0.1
+roughness = 0.52
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.551806, 0.709299, 0.980989, 1 )
+metallic = 0.31
+roughness = 0.42
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.471216, 0.481647, 0.465961, 1 )
+metallic = 0.1
+roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 6 )
+shader_param/mat_capture = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 9 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 14 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 15 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 10 )
+shader_param/fix_back = true
+shader_param/mat_cap = ExtResource( 7 )
+
+[node name="tester" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="environment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
+
+[node name="testers" type="Spatial" parent="."]
+
+[node name="Amber" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Amber"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Amber Visual Shader" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Amber Visual Shader"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 5 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Jade" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Jade"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 6 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Clay" parent="testers" instance=ExtResource( 5 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Clay"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 7 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Mud" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Mud"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 8 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Resin" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Resin"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 9 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="White Lightbulb" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/White Lightbulb"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 10 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Toonish" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Toonish"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 11 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Dramatic" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Dramatic"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 12 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="Skintone" parent="testers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36 )
+
+[node name="MeshInstance" type="MeshInstance" parent="testers/Skintone"]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.62575, 0.575808, -3.06348 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+
+[node name="camera" type="Spatial" parent="."]
+transform = Transform( 0.16255, 0, -0.9867, 0, 1, 0, 0.9867, 0, 0.16255, 10.1803, 0.710127, 14.3758 )
+
+[node name="base" type="Spatial" parent="camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3095, 0 )
+
+[node name="rotation" type="Spatial" parent="camera/base"]
+transform = Transform( -3.9616e-08, -0.422618, 0.906308, -1.84732e-08, 0.906308, 0.422618, -1, 0, -4.37114e-08, 6, 2.37982, 0 )
+
+[node name="camera" type="Camera" parent="camera/base/rotation"]
+fov = 65.0
+near = 0.1
+
+[node name="ui" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -68.0
+margin_bottom = -12.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ui/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer2"]
+margin_bottom = 14.0
+
+[node name="label" type="Label" parent="ui/VBoxContainer/HBoxContainer2"]
+margin_left = 4.0
+margin_right = 1020.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer2"]
+margin_left = 1024.0
+margin_right = 1024.0
+margin_bottom = 14.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/VBoxContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="prev" type="Button" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 50.0
+margin_right = 117.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Previous"
+
+[node name="MarginContainer" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 121.0
+margin_right = 167.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 171.0
+margin_right = 217.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 221.0
+margin_right = 267.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer12" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 271.0
+margin_right = 317.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 321.0
+margin_right = 367.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer13" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 371.0
+margin_right = 417.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 421.0
+margin_right = 467.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer14" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 471.0
+margin_right = 517.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 521.0
+margin_right = 567.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer15" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 571.0
+margin_right = 617.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 621.0
+margin_right = 667.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer17" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 671.0
+margin_right = 717.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 721.0
+margin_right = 767.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer18" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 771.0
+margin_right = 817.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 821.0
+margin_right = 867.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer16" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 871.0
+margin_right = 917.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="next" type="Button" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 921.0
+margin_right = 967.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Next"
+
+[node name="MarginContainer4" type="MarginContainer" parent="ui/VBoxContainer/HBoxContainer"]
+margin_left = 971.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ui"]
+anchor_right = 1.0
+margin_top = 21.98
+margin_right = -0.000244141
+margin_bottom = 41.98
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/VBoxContainer2"]
+margin_right = 1023.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_right = 45.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="bg" type="OptionButton" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 49.0
+margin_right = 90.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 41, 0 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 94.0
+margin_right = 139.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 143.0
+margin_right = 188.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 192.0
+margin_right = 237.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer12" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 241.0
+margin_right = 286.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 290.0
+margin_right = 335.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer13" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 339.0
+margin_right = 384.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 388.0
+margin_right = 433.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer14" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 437.0
+margin_right = 482.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer20" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 486.0
+margin_right = 531.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 535.0
+margin_right = 580.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer15" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 584.0
+margin_right = 629.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 633.0
+margin_right = 678.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer17" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 682.0
+margin_right = 727.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 731.0
+margin_right = 776.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer18" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 780.0
+margin_right = 825.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 829.0
+margin_right = 874.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer16" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 878.0
+margin_right = 923.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 927.0
+margin_right = 972.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer19" type="MarginContainer" parent="ui/VBoxContainer2/HBoxContainer"]
+margin_left = 976.0
+margin_right = 1023.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+[connection signal="pressed" from="ui/VBoxContainer/HBoxContainer/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="ui/VBoxContainer/HBoxContainer/next" to="." method="_on_next_pressed"]
+[connection signal="item_selected" from="ui/VBoxContainer2/HBoxContainer/bg" to="." method="_on_bg_item_selected"]

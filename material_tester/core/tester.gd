@@ -23,7 +23,7 @@ var hdrs=[
 
 func _ready():
 	for h in hdrs:	
-		get_node("ui/bg").add_item(h.name)
+		get_node("ui/VBoxContainer2/HBoxContainer/bg").add_item(h.name)
 
 func _unhandled_input(ev):
 
@@ -62,7 +62,7 @@ func _process(delta):
 	m.origin=p
 	
 	get_node("camera").transform=m
-	get_node("ui/VBoxContainer/HBoxContainer/label").text = get_node("testers").get_child(tester_index).get_name()
+	get_node("ui/VBoxContainer/HBoxContainer2/label").text = get_node("testers").get_child(tester_index).get_name()
 			
 	
 

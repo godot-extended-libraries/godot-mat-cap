@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Material Capture Tester"
-run/main_scene="res://material_tester/scenes/tester.scn"
+run/main_scene="res://material_tester/scene/tester.tscn"
 config/icon="res://icon.png"
 
 [gdnative]
