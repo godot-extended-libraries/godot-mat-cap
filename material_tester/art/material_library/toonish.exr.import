@@ -5,7 +5,7 @@ type="StreamTexture"
 path.s3tc="res://.import/toonish.exr-51ae4738120fed7c67e545f52eef83b9.s3tc.stex"
 path.etc2="res://.import/toonish.exr-51ae4738120fed7c67e545f52eef83b9.etc2.stex"
 metadata={
-"imported_formats": [ "bptc", "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
@@ -18,7 +18,7 @@ dest_files=[ "res://.import/toonish.exr-51ae4738120fed7c67e545f52eef83b9.s3tc.st
 
 compress/mode=2
 compress/lossy_quality=0.7
-compress/hdr_mode=0
+compress/hdr_mode=1
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true

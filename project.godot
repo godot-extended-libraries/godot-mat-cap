@@ -30,10 +30,12 @@ multithread/thread_rid_pool_prealloc=60
 [rendering]
 
 threads/thread_model=2
-vram_compression/import_bptc=true
 quality/shadows/filter_mode.mobile=2
 quality/reflections/texture_array_reflections.mobile=true
 quality/reflections/high_quality_ggx.mobile=true
+quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx.mobile=false
 quality/filters/msaa=1
 quality/depth/hdr.mobile=true
 quality/msaa=2

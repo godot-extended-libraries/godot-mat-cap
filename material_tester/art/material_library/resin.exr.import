@@ -5,7 +5,7 @@ type="StreamTexture"
 path.s3tc="res://.import/resin.exr-185082a4ab89246511637b8c93c85424.s3tc.stex"
 path.etc2="res://.import/resin.exr-185082a4ab89246511637b8c93c85424.etc2.stex"
 metadata={
-"imported_formats": [ "bptc", "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
@@ -18,7 +18,7 @@ dest_files=[ "res://.import/resin.exr-185082a4ab89246511637b8c93c85424.s3tc.stex
 
 compress/mode=2
 compress/lossy_quality=0.7
-compress/hdr_mode=0
+compress/hdr_mode=1
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
