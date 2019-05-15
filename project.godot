@@ -17,11 +17,22 @@ _global_script_class_icons={
 
 config/name="Material Capture Tester"
 run/main_scene="res://material_tester/scene/tester.tscn"
+run/low_processor_mode=true
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1792
+window/size/height=828
+window/dpi/allow_hidpi=true
 
 [gdnative]
 
 singletons=[  ]
+
+[gui]
+
+theme/use_hidpi=true
 
 [memory]
 
@@ -30,12 +41,7 @@ multithread/thread_rid_pool_prealloc=60
 [rendering]
 
 threads/thread_model=2
-quality/shadows/filter_mode.mobile=2
 quality/reflections/texture_array_reflections.mobile=true
 quality/reflections/high_quality_ggx.mobile=true
-quality/shading/force_vertex_shading.mobile=false
-quality/shading/force_lambert_over_burley.mobile=false
-quality/shading/force_blinn_over_ggx.mobile=false
-quality/filters/msaa=1
 quality/depth/hdr.mobile=true
 quality/msaa=2
