@@ -1,4 +1,6 @@
-# Material Captures for Godot 3.1
+# Material Capture for Godot Engine
+
+Donated by IMVU, Inc.
 
 Sources:
 * Material Sample from Godot
