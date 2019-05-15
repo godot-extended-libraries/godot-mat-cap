@@ -2,6 +2,8 @@
 
 Material captures allow the simulation of different materials cheaply. This is useful for mobile platforms.
 
+The mat cap shader is both in Visual Shader and text shader format.
+
 ![Tester](https://github.com/fire/godot-mat-cap/blob/master/Screen%20Shot%202019-05-14%20at%205.32.15%20PM.png)
 
 Donated by IMVU, Inc.
