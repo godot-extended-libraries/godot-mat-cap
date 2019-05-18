@@ -1,2 +1,5 @@
+# Godot's Import Folder
+.import/
 
-\.import/
+# Blender Backup Files
+*.blend?
